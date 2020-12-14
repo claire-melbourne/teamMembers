@@ -1,6 +1,8 @@
 # jsp-thcc-2
  
- The second take-home coding challenge is another real-world example of a prompt being used in 2020 interviews. This prompt is not timeboxed and asks you to improve upon an existing app by extending its functionality.
+ The second take-home coding challenge is another real-world example of a prompt being used in 2020 interviews. This prompt asks you to improve upon an existing app by extending its functionality. You'll be running a local database, and there is no time limit.
+ 
+When installing dependencies, remember to resolve any vulnerabilities with `npm audit fix`. Any issues which remain should be briefly noted in your submission README.md. If they are not breaking vulnerabilities (in other words, if you are able to run your app without issue), you do not need to go further than that. However, a potential employer will want to know that you’ve taken note of these issues.
 
 
 ## Introduction
@@ -55,6 +57,6 @@ Upload your repo (with README, including instructions on how to run your app) to
 
 Create a bundle of your work by running `npm run bundle` in the repo root.
 
-This generates a bundle file called `take-home-exercise` based on your local master branch. Upload this file to your Google Drive using the same account that you use for JSP. Then, use [this form](https://forms.gle/LQYm3ohiYc9Gtf7AA) to submit the file.
+This generates a bundle file called `take-home-exercise` based on your local main branch. Upload this file to your Google Drive using the same account that you use for JSP. Then, use [this form](https://forms.gle/LQYm3ohiYc9Gtf7AA) to submit the file.
 
 Good luck!
