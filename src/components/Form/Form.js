@@ -3,8 +3,6 @@ import './Form.css';
 class Form extends React.Component {
   constructor(props) {
     super(props);
-    //handle click
-    //handle submit
     this.state = {
       firstName: '',
       lastName: '',
@@ -13,10 +11,72 @@ class Form extends React.Component {
       favoriteColor: '',
       photoUrl: ''
     }
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleColorSelect = this.handleColorSelect.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+  handleInputChange(e) {
+    this.setState({
+      [e.target.name] : e.target.value
+    })
+    console.log(this.state.story)
+  }
+
+  handleColorSelect(e) {
+    this.setState({
+      favoriteColor: e.target.value
+    })
+    console.log(this.state.favoriteColor)
+  }
+
+  handleSubmit() {
+    const newMemberData = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      title: this.state.title,
+      story: this.state.story,
+      favoriteColor: this.state.favoriteColor
+    }
+  }
+
   render() {
     return (
-      'FORM'
+      <form>
+        <label>
+          First Name:
+        <input type="text" value={this.state.firstName} name="firstName" onChange={ e => this.handleInputChange(e) } required/>
+        </label>
+        <label>
+          Last Name:
+          <input type="text" value= {this.state.lastName} name="lastName" onChange={ e => this.handleInputChange(e) } required />
+        </label>
+        <label>
+          Title:
+          <input
+            type="text" value= {this.state.title} name="title" onChange= {
+            e => this.handleInputChange(e) }
+          />
+        </label>
+        <label>
+          Story:
+          <textarea
+            type="textarea" value= {this.state.story} name= "story" onChange= { e => this.handleInputChange(e) }
+          />
+        </label>
+        <label>
+          Favorite Color:
+          <input
+            type="color" value= {this.state.favoriteColor} name = "favoriteColor" onChange= {e => this.handleColorSelect(e)}
+          />
+        </label>
+        <label>
+          'Photo of YOU! (provide a link please!)':
+          <input
+            type= "url" name="photoUrl" value={this.state.photoUrl} onChange= { e => this.handleInputChange(e)}
+          />
+        </label>
+        <input type="submit" value="Submit"/>
+      </form>
     )
   }
 }
