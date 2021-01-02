@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import TeamMember from '../TeamMember';
+import Form from '../Form';
 import './App.css';
 
 class App extends React.Component {
@@ -8,7 +9,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       team: [],
-      loading: true
+      loading: true,
+      formView: false
     };
   }
 
@@ -32,9 +34,20 @@ class App extends React.Component {
     });
   }
 
+  toggleFormView() {
+    this.setState({
+      formView: !this.state.formView
+    })
+  }
+
   render() {
     if (this.state.loading) {
       return <h1>Loading...</h1>;
+    }
+    if (this.state.formView) {
+      return (
+        <Form/>
+      )
     }
 
     return (
@@ -51,7 +64,7 @@ class App extends React.Component {
           />
         ))}
         {/* Make this new team member link to your form! */}
-        <TeamMember id="new" name="Join us!" title="New Teammate" />
+        <TeamMember id="new" name="Join us!" title="New Teammate" toggleFormView={this.toggleFormView.bind(this)}/>
       </div>
     );
   }
