@@ -34,10 +34,18 @@ class App extends React.Component {
     });
   }
 
+  // postNewData(newMemberData){
+  //   axios.post()
+  // }
+
   toggleFormView() {
     this.setState({
       formView: !this.state.formView
     })
+  }
+
+  saveNewMemberData(formData) {
+    console.log('received form data for ' + formData.firstName + ' ' + formData.lastName);
   }
 
   render() {
@@ -46,7 +54,7 @@ class App extends React.Component {
     }
     if (this.state.formView) {
       return (
-        <Form/>
+        <Form saveNewMemberData={this.saveNewMemberData.bind(this)}/>
       )
     }
 

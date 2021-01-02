@@ -29,7 +29,7 @@ class Form extends React.Component {
     console.log(this.state.favoriteColor)
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
     const newMemberData = {
       firstName: this.state.firstName,
       lastName: this.state.lastName,
@@ -37,11 +37,15 @@ class Form extends React.Component {
       story: this.state.story,
       favoriteColor: this.state.favoriteColor
     }
+
+    console.log('submit clicked ' + newMemberData)
+    e.preventDefault();
+    this.props.saveNewMemberData(newMemberData);
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit= {this.handleSubmit}>
         <label>
           First Name:
         <input type="text" value={this.state.firstName} name="firstName" onChange={ e => this.handleInputChange(e) } required/>
@@ -75,7 +79,7 @@ class Form extends React.Component {
             type= "url" name="photoUrl" value={this.state.photoUrl} onChange= { e => this.handleInputChange(e)}
           />
         </label>
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Submit" />
       </form>
     )
   }
