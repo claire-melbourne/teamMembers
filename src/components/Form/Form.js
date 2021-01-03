@@ -52,19 +52,20 @@ class Form extends React.Component {
         </label>
         <label>
           Last Name:
-          <input type="text" value= {this.state.lastName} name="lastName" onChange={ e => this.handleInputChange(e) } required />
+          <input type="text" value= {this.state.lastName} name="lastName" onChange={ e => this.handleInputChange(e) } required
+          />
         </label>
         <label>
           Title:
           <input
             type="text" value= {this.state.title} name="title" onChange= {
-            e => this.handleInputChange(e) }
+            e => this.handleInputChange(e) } required
           />
         </label>
         <label>
           Story:
           <textarea
-            type="textarea" value= {this.state.story} name= "story" onChange= { e => this.handleInputChange(e) }
+            type="textarea" value= {this.state.story} name= "story" onChange= { e => this.handleInputChange(e) } required
           />
         </label>
         <label>
