@@ -19,14 +19,12 @@ class Form extends React.Component {
     this.setState({
       [e.target.name] : e.target.value
     })
-    console.log(this.state.story)
   }
 
   handleColorSelect(e) {
     this.setState({
       favoriteColor: e.target.value
     })
-    console.log(this.state.favoriteColor)
   }
 
   handleSubmit(e) {
@@ -35,10 +33,9 @@ class Form extends React.Component {
       lastName: this.state.lastName,
       title: this.state.title,
       story: this.state.story,
-      favoriteColor: this.state.favoriteColor
+      favoriteColor: this.state.favoriteColor,
+      photoUrl: this.state.photoUrl
     }
-
-    console.log('submit clicked ' + newMemberData)
     e.preventDefault();
     this.props.saveNewMemberData(newMemberData);
   }
