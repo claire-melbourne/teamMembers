@@ -34,9 +34,20 @@ class App extends React.Component {
     });
   }
 
-  // postNewData(newMemberData){
-  //   axios.post()
-  // }
+  async postNewData(newMemberData){
+    this.setState({
+      loading: true
+    })
+    try {
+      const response = await axios.post('/newMember', newMemberData);
+      if (response) {
+        alert('Successfully joined!')
+        this.fetchInitialData();
+      }
+    } catch (error) {
+      alert('Unable to add new member. Make sure all required elements are filled in.')
+    }
+  }
 
   toggleFormView() {
     this.setState({
@@ -46,6 +57,8 @@ class App extends React.Component {
 
   saveNewMemberData(formData) {
     console.log('received form data for ' + formData.firstName + ' ' + formData.lastName);
+    this.postNewData(formData);
+    this.toggleFormView();
   }
 
   render() {
