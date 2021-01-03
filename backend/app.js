@@ -23,7 +23,7 @@ app.post('/newMember', async (req, res, next) => {
     res.json(newMember + ' data saved')
   } catch (error) {
     console.log(error)
-    res.json('unable to add team member')
+    res.status(400).end();
   }
 })
 
