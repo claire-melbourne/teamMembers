@@ -20,9 +20,10 @@ app.post('/newMember', async (req, res, next) => {
       favoriteColor: req.body.favoriteColor,
       photoUrl: req.body.photoUrl
     })
-    res.json(newMember)
+    res.json(newMember + ' data saved')
   } catch (error) {
     console.log(error)
+    res.json('unable to add team member')
   }
 })
 
