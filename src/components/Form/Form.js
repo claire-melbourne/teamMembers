@@ -42,43 +42,48 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit= {this.handleSubmit}>
-        <label>
-          First Name:
-        <input type="text" value={this.state.firstName} name="firstName" onChange={ e => this.handleInputChange(e) } required/>
-        </label>
-        <label>
-          Last Name:
-          <input type="text" value= {this.state.lastName} name="lastName" onChange={ e => this.handleInputChange(e) } required
-          />
-        </label>
-        <label>
-          Title:
-          <input
-            type="text" value= {this.state.title} name="title" onChange= {
-            e => this.handleInputChange(e) } required
-          />
-        </label>
-        <label>
-          Story:
-          <textarea
-            type="textarea" value= {this.state.story} name= "story" onChange= { e => this.handleInputChange(e) } required
-          />
-        </label>
-        <label>
-          Favorite Color:
-          <input
-            type="color" value= {this.state.favoriteColor} name = "favoriteColor" onChange= {e => this.handleColorSelect(e)}
-          />
-        </label>
-        <label>
-          'Photo of YOU! (provide a link please!)':
-          <input
-            type= "url" name="photoUrl" value={this.state.photoUrl} onChange= { e => this.handleInputChange(e)}
-          />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+      <div>
+        <h2>Enter your information and submit to join the team!</h2>
+        <form onSubmit= {this.handleSubmit}>
+          <label>
+            First Name:<br></br>
+          <input className="required" type="text" value={this.state.firstName} name="firstName" onChange={ e => this.handleInputChange(e) } required/>
+          </label>
+          <label>
+            Last Name:<br></br>
+            <input className="required" type="text" value= {this.state.lastName} name="lastName" onChange={ e => this.handleInputChange(e) } required
+            />
+          </label>
+          <label>
+            Title:<br></br>
+            <input
+              className="required"
+              type="text" value= {this.state.title} name="title" onChange= {
+              e => this.handleInputChange(e) } required
+            />
+          </label>
+          <label>
+            Story:<br></br>
+            <textarea
+              className="required"
+              type="textarea" value= {this.state.story} name= "story" onChange= { e => this.handleInputChange(e) } required
+            />
+          </label>
+          <label>
+            Favorite Color:<br></br>
+            <input
+              type="color" value= {this.state.favoriteColor} name = "favoriteColor" onChange= {e => this.handleColorSelect(e)}
+            />
+          </label>
+          <label>
+            'Photo of YOU! (provide a link please!)':<br></br>
+            <input
+              type= "url" name="photoUrl" value={this.state.photoUrl} onChange= { e => this.handleInputChange(e)}
+            />
+          </label>
+          <input className= 'formSubmit' type="submit" value="Submit" />
+        </form>
+      </div>
     )
   }
 }

@@ -84,6 +84,24 @@ footer .stat {
 .one-third-flex-box {
   width: 33.33%;
 }
+.button{
+    width: 90%;
+    height: 75px;
+    font-family: inherit;
+    font-size: 30px;
+    cursor: pointer;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 10px rgba(79, 82, 177, 0.35);
+    border: none;
+    border-radius: 4px;
+    margin-top: 25px;
+  }
+
+.button:hover {
+  background-color: black;
+  color:white;
+}
 
 @media screen and (min-width: 640px) {
   .container {

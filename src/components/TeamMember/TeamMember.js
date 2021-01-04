@@ -35,10 +35,9 @@ class TeamMember extends React.PureComponent {
             />
           </div>
           <h2 className="title">{this.props.title}</h2>
-          <h1 className="name">{this.props.name}</h1>
+          {this.props.id===undefined ?  <h1 className="name">{this.props.name}</h1> :  <button className="button" onClick= {()=> this.handleClick()}>Join the team!</button>}
         </header>
         <div className="body">{this.props.story}</div>
-        <button className="button" onClick= {()=> this.handleClick()}>{this.props.id ===undefined ? null : 'Join the team!'}</button>
         <footer style={{ backgroundColor: this.props.favoriteColor }}>
           <div className="full-width-flex-box">
             <div className="one-third-flex-box stat">9.0</div>

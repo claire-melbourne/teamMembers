@@ -28,6 +28,7 @@ class App extends React.Component {
 
   async fetchInitialData() {
     const response = await axios.get('/team');
+    console.log(response.data);
     this.setState({
       team: response.data,
       loading: false
@@ -45,7 +46,7 @@ class App extends React.Component {
         this.fetchInitialData();
       }
     } catch (error) {
-      alert('Unable to add new member. Make sure all required elements are filled in.')
+      alert('Unable to add new member at this time')
     }
   }
 
